@@ -4,12 +4,7 @@
 <style>
 table#spinner, table#spinner td{transition: transform .25s ease}
 table#spinner {margin:1em}
-table#spinner td{
-	width:var(--spinner-td-dim);
-	height:var(--spinner-td-dim);
-	max-width:var(--spinner-td-dim);
-	max-height:var(--spinner-td-dim);
-}
+table#spinner td{width:3em;height:3em;max-width:3em;max-height:3em;}
 table#spinner td>a{
 	text-align:center;
 	align-content:center;
@@ -37,6 +32,7 @@ body:has(>:not(#biography):target) .biography
 @import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
 html{
 	font-family: "Dekko", cursive;
+	font-size: 1.5vmax;
 	--color1:#FDFD96;
 	--color2:#e0c588;
 	--color3:#b87b82;
@@ -45,13 +41,13 @@ html{
 	--color6:#474d5c;
 	background:var(--color6);
 	color:var(--color2);
-	--spinner-td-dim:3em;
 }
 h1,h3{color:var(--color1);}
 h2{color:var(--color2);}
-table#spinner td>a{
-	background:radial-gradient(var(--color3),var(--color3) 40%,var(--color4) 50%, var(--color4));
-}
+table#spinner td>a{background:radial-gradient(
+	var(--color3),var(--color3) 40%,
+	var(--color4) 50%,var(--color4)
+)}
 a{
 	color:var(--color1);
 	font-weight:bold;
@@ -62,7 +58,7 @@ a:hover{
 .main {
 	background-color:var(--color5);
 	min-width:80%;
-	padding:1em 3em;
+	padding:1em 3em 2.5em 3em;
 	border-radius:1em;
 }
 
@@ -96,7 +92,7 @@ a:hover{
 </div>
 <div id="events"></div><div id="stories"></div><div id="multimedia"></div><div id="digital"></div>
 <div id="biography"></div><div id="contact"></div>
-<table><td style="digitalisplay:block">
+<table><td style="display:block">
 <table id="spinner"><tbody>
 	<tr><td><a href="#events"><span>Ev</span></a></td>
 		<td><a href="#stories"><span>St</span></a></td></tr>
