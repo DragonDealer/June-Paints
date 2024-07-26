@@ -13,21 +13,39 @@ table#spinner td>a{
 	height:100%;
 	border-radius:100%;
 }
-body:has(>#events:target    ) table#spinner   {transform:rotate( 045deg)}
-body:has(>#events:target    ) table#spinner td{transform:rotate(-045deg)}
-body:has(>#stories:target   ) table#spinner   {transform:rotate(-045deg)}
-body:has(>#stories:target   ) table#spinner td{transform:rotate( 045deg)}
-body:has(>#multimedia:target) table#spinner   {transform:rotate( 135deg)}
-body:has(>#multimedia:target) table#spinner td{transform:rotate(-135deg)}
-body:has(>#digital:target   ) table#spinner   {transform:rotate(-135deg)}
-body:has(>#digital:target   ) table#spinner td{transform:rotate( 135deg)}
-body:not(:has(>#events:target    )) .events,
-body:not(:has(>#stories:target   )) .stories,
-body:not(:has(>#multimedia:target)) .multimedia,
-body:not(:has(>#digital:target   )) .digital,
-body:not(:has(>#contact:target   )) .contact,
-body:has(>:not(#biography):target) .biography
+body:has(#events:target    ) table#spinner   {transform:rotate( 045deg)}
+body:has(#events:target    ) table#spinner td{transform:rotate(-045deg)}
+body:has(#stories:target   ) table#spinner   {transform:rotate(-045deg)}
+body:has(#stories:target   ) table#spinner td{transform:rotate( 045deg)}
+body:has(#multimedia:target) table#spinner   {transform:rotate( 135deg)}
+body:has(#multimedia:target) table#spinner td{transform:rotate(-135deg)}
+body:has(#digital:target   ) table#spinner   {transform:rotate(-135deg)}
+body:has(#digital:target   ) table#spinner td{transform:rotate( 135deg)}
+body:not(:has(#events:target    )) .events,
+body:not(:has(#stories:target   )) .stories,
+body:not(:has(#multimedia:target)) .multimedia,
+body:not(:has(#digital:target   )) .digital,
+body:not(:has(#contact:target   )) .contact,
+body:has([id]:not(#biography):target) .biography
 {display:none}
+</style> <style>
+.flex {
+	display:flex;
+	margin-left:-1vmax;
+	margin-right:-1vmax;
+	flex-direction:row;
+}
+.flex>*{
+	display:flex;
+	flex-direction:column;
+}
+.flex>*:first-child:nth-last-child(1) {width: 100%;}
+.flex>*:first-child:nth-last-child(2),
+.flex>*:first-child:nth-last-child(2) ~ * {width: 50%;}
+.flex>*:first-child:nth-last-child(3),
+.flex>*:first-child:nth-last-child(3) ~ * {width: 33.3333%;}
+.flex>*:first-child:nth-last-child(4),
+.flex>*:first-child:nth-last-child(4) ~ * {width: 25%;}
 </style> <style>
 @import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
 html{
@@ -44,11 +62,8 @@ html{
 }
 h1,h3{color:var(--color1);}
 h2{color:var(--color2);}
-table#spinner td>a{background:radial-gradient(
-	var(--color3),var(--color3) 40%,
-	var(--color4) 50%,var(--color4)
-)}
-a{
+table#spinner td>a{background:radial-gradient(var(--color3),var(--color3) 40%, var(--color4) 50%,var(--color4))}
+a {
 	color:var(--color1);
 	font-weight:bold;
 }
@@ -61,37 +76,18 @@ a:hover{
 	padding:1em 3em 2.5em 3em;
 	border-radius:1em;
 }
-
-.flex.row {
-	display:flex;
-	margin-left:-1vmax;
-	margin-right:-1vmax;
-	flex-direction:row;
-}
-.flex.column{
-	display:flex;
-	max-width:50%;
-	flex-direction:column;
-}
-.flex img {
+img {
 	border-radius:1vmax;
 	margin:1vmax;
 }
-
-.corner {
-	position:absolute;
-	right:2vmax;
-	top:2vmax;
-	text-align:right;
-}
 </style>
 </head><body>
-<div class="corner">
-	<a href="#biography"><img src="home.png" style="height:1.5em"/> My Bio</a><hr/>
-	<a href="#contact"><img src="contact.png" style="height:1.5em"/> Contact Me</a>
+<div style="position:absolute;top:-100vh"><div id="events"></div><div id="stories"></div><div id="multimedia"></div><div id="digital"></div>
+	<div id="biography"></div><div id="contact"></div></div>
+<div style="position:absolute;right:2vmax;top:2vmax;text-align:right;">
+	<a href="#biography"><img src="home.png" style="height:1.5em;margin:unset;"/> My Bio</a><hr/>
+	<a href="#contact"><img src="contact.png" style="height:1.5em;margin:unset;"/> Contact Me</a>
 </div>
-<div id="events"></div><div id="stories"></div><div id="multimedia"></div><div id="digital"></div>
-<div id="biography"></div><div id="contact"></div>
 <table><td style="display:block">
 <table id="spinner"><tbody>
 	<tr><td><a href="#events" title="Events" style="--color4:var(--color1)"><span>Ev</span></a></td>
@@ -116,23 +112,20 @@ a:hover{
 <div class="events main">
 	<h3>General vicinity of Randolph, NJ, USA</h3>
 	<h2>Facepainting</h2>
-	Pay what you feel it’s worth, suggestions are
-	a Doodle for $3,
-	a Detail for $5, and
-	a Deluxe (full face) for $10
-	<div class="flex row"><div class="flex column">
+	Pay what you feel it’s worth, suggestions are: a Doodle for $3, a Detail for $5, and a Deluxe (full face) for $10
+	<div class="flex"><div>
 		<img src="paint/BeeFace.jpg"/>
 		<img src="paint/Flareon.jpg"/>
 		<img src="paint/Foxface.jpg"/>
 		<img src="paint/PinkBunnies.jpg"/>
-	</div><div class="flex column">
+	</div><div>
 		<img src="paint/PinkWhiteUnicorn.jpg"/>
 		<img src="paint/RainbowUnicorn1.jpg"/>
 		<img src="paint/RainbowUnicorn2.jpg"/>
 		<img src="paint/SilverUnicorn.jpg"/>
 	</div></div>
 </div>
-<div class="stories main"><div class="flex column">
+<div class="stories main"><div>
 	<a href="https://archiveofourown.com/">AO3</a>
 	<a href="#">.</a>
 	<a href="#">.</a>
@@ -141,6 +134,11 @@ a:hover{
 </div></div>
 <div class="multimedia main">
 	<h2>Cosplay</h2>
+	<div class="flex"><div>
+		<img src="cosplay/JuneInk1Face.jpg"/>
+	</div><div>
+		<img src="cosplay/JuneInk2Face.jpg"/>
+	</div></div>
 	<h2>Other</h2>
 </div>
 <div class="digital main">
@@ -155,9 +153,9 @@ a:hover{
 	<img src="cosplay/JuneInk1Face.jpg" style="height:12em"/><br/>
 	"Any magic, sufficiently analyzed, is indistinguishable from science"
 </div>
-<div class="contact main"><div class="flex column">
+<div class="contact main"><div class="flex"><div>
 	<a href="mailto:dragondealerarts@gmail.com"><span style="color:cyan">dragon</span><span style="color:orchid">dealer</span><span style="color:var(--color2)">arts</span>@gmail.com</a>
+	<span>i can be called at <a href="tel:+19734335972">+1 973 433 5972</a>, but may not pick up</span>
 	<span>this website is also on <a href="https://biogeeks.net">biogeeks.net</a></span>
-	<span>i can be called at <a href="tel:+1 973 433 5972">+1 973 433 5972</a>, but may not pick up</span>
-</div></div>
+</div></div></div>
 </body></html>
