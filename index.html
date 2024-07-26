@@ -18,20 +18,20 @@ table#spinner td>a{
 	height:100%;
 	border-radius:100%;
 }
-body:has(>#events:target) table#spinner   {transform:rotate( 045deg)}
-body:has(>#events:target) table#spinner td{transform:rotate(-045deg)}
-body:has(>#stories:target) table#spinner   {transform:rotate(-045deg)}
-body:has(>#stories:target) table#spinner td{transform:rotate( 045deg)}
+body:has(>#events:target    ) table#spinner   {transform:rotate( 045deg)}
+body:has(>#events:target    ) table#spinner td{transform:rotate(-045deg)}
+body:has(>#stories:target   ) table#spinner   {transform:rotate(-045deg)}
+body:has(>#stories:target   ) table#spinner td{transform:rotate( 045deg)}
 body:has(>#multimedia:target) table#spinner   {transform:rotate( 135deg)}
 body:has(>#multimedia:target) table#spinner td{transform:rotate(-135deg)}
-body:has(>#digital:target) table#spinner   {transform:rotate(-135deg)}
-body:has(>#digital:target) table#spinner td{transform:rotate( 135deg)}
-body:not(:has(>#events:target)) .events,
-body:not(:has(>#stories:target)) .stories,
+body:has(>#digital:target   ) table#spinner   {transform:rotate(-135deg)}
+body:has(>#digital:target   ) table#spinner td{transform:rotate( 135deg)}
+body:not(:has(>#events:target    )) .events,
+body:not(:has(>#stories:target   )) .stories,
 body:not(:has(>#multimedia:target)) .multimedia,
-body:not(:has(>#digital:target)) .digital,
-body:not(:has(>#biography:target)) .biography,
-body:not(:has(>#contact:target)) .contact
+body:not(:has(>#digital:target   )) .digital,
+body:not(:has(>#contact:target   )) .contact,
+body:has(>:not(#biography):target) .biography
 {display:none}
 </style> <style>
 @import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
