@@ -18,20 +18,21 @@ table#spinner td>a{
 	height:100%;
 	border-radius:100%;
 }
-body:has(>#a:target) table#spinner   {transform:rotate( 045deg)}
-body:has(>#a:target) table#spinner td{transform:rotate(-045deg)}
-body:has(>#b:target) table#spinner   {transform:rotate(-045deg)}
-body:has(>#b:target) table#spinner td{transform:rotate( 045deg)}
-body:has(>#c:target) table#spinner   {transform:rotate( 135deg)}
-body:has(>#c:target) table#spinner td{transform:rotate(-135deg)}
-body:has(>#d:target) table#spinner   {transform:rotate(-135deg)}
-body:has(>#d:target) table#spinner td{transform:rotate( 135deg)}
-body:not(:has(>#a:target)) .a,
-body:not(:has(>#b:target)) .b,
-body:not(:has(>#c:target)) .c,
-body:not(:has(>#d:target)) .d {
-	display:none;
-}
+body:has(>#events:target) table#spinner   {transform:rotate( 045deg)}
+body:has(>#events:target) table#spinner td{transform:rotate(-045deg)}
+body:has(>#stories:target) table#spinner   {transform:rotate(-045deg)}
+body:has(>#stories:target) table#spinner td{transform:rotate( 045deg)}
+body:has(>#multimedia:target) table#spinner   {transform:rotate( 135deg)}
+body:has(>#multimedia:target) table#spinner td{transform:rotate(-135deg)}
+body:has(>#digital:target) table#spinner   {transform:rotate(-135deg)}
+body:has(>#digital:target) table#spinner td{transform:rotate( 135deg)}
+body:not(:has(>#events:target)) .events,
+body:not(:has(>#stories:target)) .stories,
+body:not(:has(>#multimedia:target)) .multimedia,
+body:not(:has(>#digital:target)) .digital,
+body:not(:has(>#biography:target)) .biography,
+body:not(:has(>#contact:target)) .contact
+{display:none}
 </style> <style>
 @import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
 html{
@@ -93,42 +94,61 @@ a:hover{
 	<a href="#biography">Bio</a><hr/>
 	<a href="#contact">Contact</a>
 </div>
-<div id="a"></div><div id="b"></div><div id="c"></div><div id="d"></div>
-<table><td style="display:block">
+<div id="events"></div><div id="stories"></div><div id="multimedia"></div><div id="digital"></div>
+<div id="biography"></div><div id="contact"></div>
+<table><td style="digitalisplay:block">
 <table id="spinner"><tbody>
-	<tr><td><a href="#a"><span>Ev</span></a></td>
-		<td><a href="#b"><span>St</span></a></td></tr>
-	<tr><td><a href="#c"><span>Mm</span></a></td>
-		<td><a href="#d"><span>Dg</span></a></td></tr>
+	<tr><td><a href="#events"><span>Ev</span></a></td>
+		<td><a href="#stories"><span>St</span></a></td></tr>
+	<tr><td><a href="#multimedia"><span>Mm</span></a></td>
+		<td><a href="#digital"><span>Dg</span></a></td></tr>
 </tbody></table>
 </td><td>
-<div class="a">
+<div class="events">
 	<h1>Events</h1>Where am I?
 </div>
-<div class="b">
+<div class="stories">
 	<h1>Stories</h1>Let me tell you a tale…
 </div>
-<div class="c">
+<div class="multimedia">
 	<h1>Multimedia</h1>Three! Di! Mensional!
 </div>
-<div class="d">
+<div class="digital">
 	<h1>Digital</h1>See?
 </div>
 </td></table>
-<div class="main a">
+<div class="events main">
 	<h2>Facepainting Info & Prices</h2>
 	<h3>General vicinity</h3>
 	<div class="flex row"><div class="flex column">
 	</div><div class="flex column">
 	</div></div>
 </div>
-<div class="main b"><div class="flex column">
+<div class="stories main"><div class="flex column">
 	<a href="https://archiveofourown.com/">AO3</a>
 	<a href="#">.</a>
 	<a href="#">.</a>
 	<a href="#">.</a>
 	<a href="#">.</a>
 </div></div>
-<div class="main c"></div>
-<div class="main d"></div>
+<div class="multimedia main">
+	<h2>Cosplay</h2>
+	<h2>Other</h2>
+</div>
+<div class="digital main">
+	<h2>Animation</h2>
+	<h2>Illustration</h2>
+	<h2>Commish</h2>
+</div>
+<div class="biography main">
+	<h1>D͞r̨a̢g͜o̻n͔-͇a͕d̩̠̽ǰ̣͚a̲͍͆c͙̳̓en҉t</h1>
+	Any magic, sufficiently analyzed, is indistinguishable from science
+</div>
+<div class="contact main"><div class="flex column">
+	<a href="#">Discord?</a>
+	<a href="mailto:dragondealerarts@gmail.com"><span style="color:cyan">dragon</span><span style="color:orchid">dealer</span><span style="color:var(--color2)">arts</span>@gmail.com</a>
+	<a href="#">.</a>
+	<a href="#">.</a>
+	<a href="#">.</a>
+</div></div>
 </body></html>
