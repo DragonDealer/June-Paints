@@ -57,6 +57,14 @@ a:hover{color:var(--color2);}
 	width:60%; margin:auto;
 }
 img { border-radius:1vmax; margin:1vmax; }
+</style> <style>
+body:has(#events:target    ) a[href="#events"],
+body:has(#stories:target   ) a[href="#stories"],
+body:has(#multimedia:target) a[href="#multimedia"],
+body:has(#digital:target   ) a[href="#digital"],
+body:has(#biography:target ) a[href="#biography"] img,
+body:has(#contact:target   ) a[href="#contact"] img
+{ background: var(--color2); color: var(--color3);}
 </style>
 </head><body>
 <div style="position:absolute;top:-100vh"><div id="events"></div><div id="stories"></div><div id="multimedia"></div><div id="digital"></div>
