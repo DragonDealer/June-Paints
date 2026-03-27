@@ -102,18 +102,22 @@ body:has(#contact:target   ) a[href="#contact"] img
 	</div>
 </div>
 <div style="
-border: 10vw solid transparent;
-border-bottom: 6vw solid var(--color4);
-margin: -5vw auto 0;box-sizing: border-box;
-width: calc(60% + 6em);
+--wid: (60vw - 8px + 6em);
+--bord: (.175 * var(--wid));
+border: calc(var(--bord)) solid transparent;
 border-top: 0;
+border-bottom: calc(.094 * var(--wid)) solid var(--color4);
+box-sizing: border-box;
+width: calc(var(--wid));
+margin: auto;
 "><img src="blank.png" style="
-margin: calc(-10vw - 0.12*(60vw + 6em));
-width: calc(1.25 * (60vw + 6em));
-margin-top: calc(-.15 * (60vw + 6em));
-margin-bottom: calc(-.25em + -.442 * (60vw + 6em));
-background-image: url(Pagedoll_R1.png);
+--w: (1.31  * var(--wid));
+width: calc(var(--w));
+margin: 0 calc(var(--w)/-2 + var(--wid)/2 - var(--bord));
+margin-top: calc(-.25 * var(--w));
+margin-bottom: calc(-.25em + -.3536 * var(--w));
 background-size: contain;
+background-image: url(Pagedoll_R1.png);
 "></div>
 <div class="events main">
 	<h3>General vicinity of Randolph, NJ, USA</h3>
