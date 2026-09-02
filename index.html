@@ -39,16 +39,11 @@ body:has(:not(#biography):target) .biography
 	display:flex; flex-direction:row;
 	margin-left:-1vmax; margin-right:-1vmax;
 }
-.flex>*{
-	display:flex; flex-direction:column;
-}
-.flex>*:first-child:nth-last-child(1) {width: 100%;}
-.flex>*:first-child:nth-last-child(2),
-.flex>*:first-child:nth-last-child(2) ~ * {width: 50%;}
-.flex>*:first-child:nth-last-child(3),
-.flex>*:first-child:nth-last-child(3) ~ * {width: 33.3333%;}
-.flex>*:first-child:nth-last-child(4),
-.flex>*:first-child:nth-last-child(4) ~ * {width: 25%;}
+.flex>* { display:flex; flex-direction:column;}
+.flex:has(>:first-child:nth-last-child(1))>* {width: 100%;}
+.flex:has(>:first-child:nth-last-child(2))>* {width: 50%;}
+.flex:has(>:first-child:nth-last-child(3))>* {width: 33.3333%;}
+.flex:has(>:first-child:nth-last-child(4))>* {width: 25%;}
 </style> <style>
 @import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
 html{
