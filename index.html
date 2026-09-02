@@ -13,20 +13,31 @@ TODO:
 <link rel="shortcut icon" href="/favicon.ico"/>
 <title>Dragondealer Arts</title>
 <style>
-table#spinner, table#spinner td{transition: transform .25s ease}
-table#spinner td{width:3em;height:3em;max-width:3em;max-height:3em;}
-table#spinner td>a{
+#spinner, #spinner>* {transition: transform .25s ease}
+#spinner{width:9em;height:9em;}
+#spinner>*{width:3em;height:3em;}
+#spinner>*>a{
 	text-align:center; align-content:center; display:block;
 	width:100%; height:100%; border-radius:100%;
 }
-body:has(#events:target    ) table#spinner   {transform:rotate( 045deg)}
-body:has(#events:target    ) table#spinner td{transform:rotate(-045deg)}
-body:has(#stories:target   ) table#spinner   {transform:rotate(-045deg)}
-body:has(#stories:target   ) table#spinner td{transform:rotate( 045deg)}
-body:has(#multimedia:target) table#spinner   {transform:rotate( 135deg)}
-body:has(#multimedia:target) table#spinner td{transform:rotate(-135deg)}
-body:has(#digital:target   ) table#spinner   {transform:rotate(-135deg)}
-body:has(#digital:target   ) table#spinner td{transform:rotate( 135deg)}
+#spinner > * { position: absolute; top:calc(50% - 1.5em);left:calc(50% - 1.5em); }
+#spinner > :has(>a[href="#events"]) { --trans: translate(-58.779%, -80.902%) }
+#spinner > :has(>a[href="#stories"]) { --trans: translate(58.779%, -80.902%) }
+#spinner > :has(>a[href="#multimedia"]) { --trans: translate(95.106%, 30.902%) }
+#spinner > :has(>a[href="#digital"]) { --trans: translate(0, 100%) }
+#spinner > :has(>a[href="#contact"]) { --trans: translate(-95.106%, 30.902%) }
+body:not(:has(:not(#biography):target)) #spinner   {transform: var(--trans) rotate(0)}
+body:not(:has(:not(#biography):target)) #spinner>* {transform: var(--trans) rotate(0)}
+body:has(#events:target    ) #spinner   {transform:              rotate( 036deg)}
+body:has(#events:target    ) #spinner>* {transform: var(--trans) rotate(-036deg)}
+body:has(#stories:target   ) #spinner   {transform:              rotate(-036deg)}
+body:has(#stories:target   ) #spinner>* {transform: var(--trans) rotate( 036deg)}
+body:has(#multimedia:target) #spinner   {transform:              rotate(-108deg)}
+body:has(#multimedia:target) #spinner>* {transform: var(--trans) rotate( 108deg)}
+body:has(#digital:target   ) #spinner   {transform:              rotate( 180deg)}
+body:has(#digital:target   ) #spinner>* {transform: var(--trans) rotate(-180deg)}
+body:has(#contact:target   ) #spinner   {transform:              rotate( 108deg)}
+body:has(#contact:target   ) #spinner>* {transform: var(--trans) rotate(-108deg)}
 body:not(:has(#events:target    )) .events,
 body:not(:has(#stories:target   )) .stories,
 body:not(:has(#multimedia:target)) .multimedia,
@@ -54,7 +65,7 @@ html{
 }
 h1,h3{color:var(--color1);}
 h2{color:var(--color2);}
-table#spinner td>a{background:radial-gradient(var(--color3),var(--color3) 40%, var(--color4) 50%,var(--color4))}
+#spinner>*>a{background:radial-gradient(var(--color3),var(--color3) 40%, var(--color4) 50%,var(--color4))}
 a {color:var(--color1); font-weight:bold;}
 a:hover{color:var(--color2);}
 .main {
@@ -68,24 +79,24 @@ body:has(#events:target    ) a[href="#events"],
 body:has(#stories:target   ) a[href="#stories"],
 body:has(#multimedia:target) a[href="#multimedia"],
 body:has(#digital:target   ) a[href="#digital"],
-body:has(#biography:target ) a[href="#biography"] img,
-body:has(#contact:target   ) a[href="#contact"] img
+body:has(#contact:target   ) a[href="#contact"] img,
+body:has(#biography:target ) a[href="#biography"] img
 { background: var(--color2); color: var(--color3);}
 </style>
 </head><body>
 <div style="position:absolute;top:-100vh"><div id="events"></div><div id="stories"></div><div id="multimedia"></div><div id="digital"></div>
 	<div id="biography"></div><div id="contact"></div></div>
-<div style="position:fixed;left:1em;">
-	<table id="spinner"><tbody>
-		<tr><td><a href="#events" title="Events" style="--color4:var(--color3)"><span>Ev</span></a></td>
-			<td><a href="#stories" title="Stories"><span>St</span></a></td></tr>
-		<tr><td><a href="#multimedia" title="Multimedia"><span>Mm</span></a></td>
-			<td><a href="#digital" title="Digital"><span>Dg</span></a></td></tr>
-	</tbody></table>
-	<div style="height:.67em"></div>
-	<a href="#biography" title="My Bio"><img src="home.png" style="height:2em;margin:unset;"/></a>
-	<br/>
-	<a href="#contact" title="Contact Me"><img src="contact.png" style="height:2em;margin:unset;"/></a>
+<div style="position:fixed">
+	<div id="spinner">
+		<div><a href="#events" title="Events" style="--color4:var(--color3)"><span>Ev</span></a></div>
+		<div><a href="#stories" title="Stories"><span>St</span></a></div>
+		<div><a href="#multimedia" title="Multimedia"><span>Mm</span></a></div>
+		<div><a href="#digital" title="Digital"><span>Dg</span></a></div>
+		<div><a href="#contact" title="Contact Me"><img src="contact.png" style="width:2em;height:2em;margin:unset;margin-top:0.333em"/></a></div>
+		<div style="--trans: rotate(0);width:2em;height:2em;top:calc(50% - 1em);left:calc(50% - 1em);">
+			<a href="#biography" title="My Bio" style="width:2em;height:2em;"><img src="home.png" style="width:1em;height:1em;margin:unset;margin-top:0.333em"/></a>
+		</div>
+	</div>
 </div>
 <div style="margin: 0 0 2em 9em">
 	<div class="events">
