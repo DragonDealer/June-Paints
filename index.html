@@ -26,8 +26,6 @@ TODO:
 #spinner > :has(>a[href="#multimedia"]) { --trans: translate(95.106%, 30.902%) }
 #spinner > :has(>a[href="#digital"]) { --trans: translate(0, 100%) }
 #spinner > :has(>a[href="#contact"]) { --trans: translate(-95.106%, 30.902%) }
-body:not(:has(:not(#biography):target)) #spinner   {transform: var(--trans) rotate(0)}
-body:not(:has(:not(#biography):target)) #spinner>* {transform: var(--trans) rotate(0)}
 body:has(#events:target    ) #spinner   {transform:              rotate( 036deg)}
 body:has(#events:target    ) #spinner>* {transform: var(--trans) rotate(-036deg)}
 body:has(#stories:target   ) #spinner   {transform:              rotate(-036deg)}
@@ -38,6 +36,8 @@ body:has(#digital:target   ) #spinner   {transform:              rotate( 180deg)
 body:has(#digital:target   ) #spinner>* {transform: var(--trans) rotate(-180deg)}
 body:has(#contact:target   ) #spinner   {transform:              rotate( 108deg)}
 body:has(#contact:target   ) #spinner>* {transform: var(--trans) rotate(-108deg)}
+body:not(:has(:not(#biography):target)) #spinner   {transform:              rotate(0)}
+body:not(:has(:not(#biography):target)) #spinner>* {transform: var(--trans) rotate(0)}
 body:not(:has(#events:target    )) .events,
 body:not(:has(#stories:target   )) .stories,
 body:not(:has(#multimedia:target)) .multimedia,
@@ -45,6 +45,14 @@ body:not(:has(#digital:target   )) .digital,
 body:not(:has(#contact:target   )) .contact,
 body:has(:not(#biography):target) .biography
 {display:none}
+</style> <style>
+body:has(#events:target    ) a[href="#events"],
+body:has(#stories:target   ) a[href="#stories"],
+body:has(#multimedia:target) a[href="#multimedia"],
+body:has(#digital:target   ) a[href="#digital"],
+body:has(#contact:target   ) a[href="#contact"],
+body:has(#biography:target ) a[href="#biography"]
+{ background: var(--color2); color: var(--color3);}
 </style> <style>
 .flex {
 	display:flex; flex-direction:row;
@@ -74,27 +82,19 @@ a:hover{color:var(--color2);}
 	width:60%; margin:auto;
 }
 img { border-radius:1vmax; margin:1vmax; }
-</style> <style>
-body:has(#events:target    ) a[href="#events"],
-body:has(#stories:target   ) a[href="#stories"],
-body:has(#multimedia:target) a[href="#multimedia"],
-body:has(#digital:target   ) a[href="#digital"],
-body:has(#contact:target   ) a[href="#contact"] img,
-body:has(#biography:target ) a[href="#biography"] img
-{ background: var(--color2); color: var(--color3);}
 </style>
 </head><body>
 <div style="position:absolute;top:-100vh"><div id="events"></div><div id="stories"></div><div id="multimedia"></div><div id="digital"></div>
 	<div id="biography"></div><div id="contact"></div></div>
 <div style="position:fixed">
 	<div id="spinner">
-		<div><a href="#events" title="Events" style="--color4:var(--color3)"><span>Ev</span></a></div>
+		<div><a href="#events" title="Events"><span>Ev</span></a></div>
 		<div><a href="#stories" title="Stories"><span>St</span></a></div>
 		<div><a href="#multimedia" title="Multimedia"><span>Mm</span></a></div>
 		<div><a href="#digital" title="Digital"><span>Dg</span></a></div>
-		<div><a href="#contact" title="Contact Me"><img src="contact.png" style="width:2em;height:2em;margin:unset;margin-top:0.333em"/></a></div>
-		<div style="--trans: rotate(0);width:2em;height:2em;top:calc(50% - 1em);left:calc(50% - 1em);">
-			<a href="#biography" title="My Bio" style="width:2em;height:2em;"><img src="home.png" style="width:1em;height:1em;margin:unset;margin-top:0.333em"/></a>
+		<div><a href="#contact" title="Contact Me"><span>Co</span></a></div>
+		<div style="--trans:rotate(0);max-width:2em;max-height:2em;top:calc(50% - 1em);left:calc(50% - 1em);">
+			<a href="#biography" title="My Bio"><span>H</span></a>
 		</div>
 	</div>
 </div>
