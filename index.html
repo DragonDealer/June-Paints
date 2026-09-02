@@ -51,8 +51,9 @@ body:has(#stories:target   ) a[href="#stories"],
 body:has(#multimedia:target) a[href="#multimedia"],
 body:has(#digital:target   ) a[href="#digital"],
 body:has(#contact:target   ) a[href="#contact"],
-body:has(#biography:target ) a[href="#biography"]
+body:not(:has(:not(#biography):target)) a[href="#biography"]
 { background: var(--color2); color: var(--color3);}
+#spinner>*>a {background:radial-gradient(var(--color3),var(--color3) 40%, var(--color4) 50%,var(--color4))}
 </style> <style>
 .flex {
 	display:flex; flex-direction:row;
@@ -73,7 +74,6 @@ html{
 }
 h1,h3{color:var(--color1);}
 h2{color:var(--color2);}
-#spinner>*>a{background:radial-gradient(var(--color3),var(--color3) 40%, var(--color4) 50%,var(--color4))}
 a {color:var(--color1); font-weight:bold;}
 a:hover{color:var(--color2);}
 .main {
@@ -83,9 +83,11 @@ a:hover{color:var(--color2);}
 }
 img { border-radius:1vmax; margin:1vmax; }
 </style>
-</head><body>
-<div style="position:absolute;top:-100vh"><div id="events"></div><div id="stories"></div><div id="multimedia"></div><div id="digital"></div>
-	<div id="biography"></div><div id="contact"></div></div>
+</head> <body>
+<div style="position:absolute;top:-100vh">
+	<div id="events"></div><div id="stories"></div><div id="multimedia"></div>
+	<div id="digital"></div><div id="biography"></div><div id="contact"></div>
+</div>
 <div style="position:fixed">
 	<div id="spinner">
 		<div><a href="#events" title="Events"><span>Ev</span></a></div>
@@ -98,7 +100,7 @@ img { border-radius:1vmax; margin:1vmax; }
 		</div>
 	</div>
 </div>
-<div style="margin: 0 0 2em 9em">
+<div style="margin: 0 0 2em 9.5em">
 	<div class="events">
 		<h1>Events</h1>Where am I?
 	</div>
@@ -111,11 +113,11 @@ img { border-radius:1vmax; margin:1vmax; }
 	<div class="digital">
 		<h1>Digital</h1>See?
 	</div>
-	<div class="biography">
-		<h1>Dragondealer</h1>Paints, Draws, & Sculpts
-	</div>
 	<div class="contact">
 		<h1>Contact Information</h1>Hello hello!
+	</div>
+	<div class="biography">
+		<h1>Dragondealer</h1>Paints, Draws, & Sculpts
 	</div>
 </div>
 <div style="
