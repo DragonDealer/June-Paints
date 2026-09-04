@@ -53,7 +53,10 @@ body:has(#digital:target   ) a[href="#digital"],
 body:has(#contact:target   ) a[href="#contact"],
 body:not(:has(:not(#biography):target)) a[href="#biography"]
 { background: var(--color2); color: var(--color3);}
-#spinner>*>a {background:radial-gradient(var(--color3),var(--color3) 40%, var(--color4) 50%,var(--color4))}
+#spinner>*>a {
+	background:radial-gradient(var(--color3),var(--color3) 40%, var(--color4) 50%,var(--color4));
+	box-sizing: border-box; border: 2px solid var(--color6);
+}
 </style> <style>
 .flex {
 	display:flex; flex-direction:row;
